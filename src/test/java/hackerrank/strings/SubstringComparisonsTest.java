@@ -11,6 +11,7 @@ class SubstringComparisonsTest {
     @CsvSource(
             delimiter = '|',
             value = {"3 | welcometojava | ava wel",
+                     "5 | SubstringComparisons | Compa ubstr",
                      "30 | ASDFHDSFHsdlfhsdlfLDFHSDLFHsdlfhsdlhkfsdlfLHDFLSDKFHsdfhsdlkfhsdlfhsLFDLSFHSDLFHsdkfhsdk" + "fhsdkfhsdfhsdfjeaDFHSDLFHDFlajfsdlfhsdlfhDSLFHSDLFHdlfhs | ASDFHDSFHsdlfhsdlfLDFHSDLFHsdl sdlkfhsdlfhsLFDLSFHSDLFHsdkfhs"}
     )
     void getSmallestAndLargest(int k, String actual, String expected) {
