@@ -1,2 +1,2 @@
-rootProject.name = "hacker-ranck"
+rootProject.name = "hacker-rank"
 
