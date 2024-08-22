@@ -1,8 +1,9 @@
 package hackerrank.strings;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RegexIPValidatorTest {
 
@@ -17,6 +18,6 @@ class RegexIPValidatorTest {
                      "false | Hello.IP"}
     )
     void matches(boolean expected, String ip) {
-        Assertions.assertEquals(expected, RegexIPValidator.matches(ip));
+        assertEquals(expected, RegexIPValidator.matches(ip));
     }
 }
