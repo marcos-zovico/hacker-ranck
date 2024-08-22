@@ -12,7 +12,7 @@ class SubstringComparisonsTest {
             delimiter = '|',
             value = {"3 | welcometojava | ava wel",
                      "5 | SubstringComparisons | Compa ubstr",
-                     "30 | ASDFHDSFHsdlfhsdlfLDFHSDLFHsdlfhsdlhkfsdlfLHDFLSDKFHsdfhsdlkfhsdlfhsLFDLSFHSDLFHsdkfhsdk" + "fhsdkfhsdfhsdfjeaDFHSDLFHDFlajfsdlfhsdlfhDSLFHSDLFHdlfhs | ASDFHDSFHsdlfhsdlfLDFHSDLFHsdl sdlkfhsdlfhsLFDLSFHSDLFHsdkfhs"}
+                     "1 | ZASKFDLklhfsdfsDLJFSJGIHEKHIPEINNNFIGHKkjgksfgjrotyotoyjtkjkL | A y"}
     )
     void getSmallestAndLargest(int k, String actual, String expected) {
         assertEquals(expected, SubstringComparisons.getSmallestAndLargest(actual, k));
