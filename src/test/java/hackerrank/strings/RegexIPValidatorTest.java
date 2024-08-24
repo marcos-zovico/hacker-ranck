@@ -11,11 +11,11 @@ class RegexIPValidatorTest {
     @CsvSource(
             delimiter = '|',
             value = {"true | 000.12.12.034",
-                     "true | 121.234.12.12",
-                     "true | 23.45.12.56",
-                     "false | 00.12.123.123123.123",
-                     "false | 122.23",
-                     "false | Hello.IP"}
+                    "true | 121.234.12.12",
+                    "true | 23.45.12.56",
+                    "false | 00.12.123.123123.123",
+                    "false | 122.23",
+                    "false | Hello.IP"}
     )
     void matches(boolean expected, String ip) {
         assertEquals(expected, RegexIPValidator.matches(ip));

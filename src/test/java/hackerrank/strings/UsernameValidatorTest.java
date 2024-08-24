@@ -11,13 +11,13 @@ class UsernameValidatorTest {
     @CsvSource(
             delimiter = '|',
             value = {"Invalid | Julia",
-                     "Valid   | Samantha",
-                     "Valid   | Samantha_21",
-                     "Invalid | 1Samantha",
-                     "Invalid | Samantha?10_2A",
-                     "Valid   | JuliaZ007",
-                     "Invalid | Julia@007",
-                     "Invalid | _Julia007"
+                    "Valid   | Samantha",
+                    "Valid   | Samantha_21",
+                    "Invalid | 1Samantha",
+                    "Invalid | Samantha?10_2A",
+                    "Valid   | JuliaZ007",
+                    "Invalid | Julia@007",
+                    "Invalid | _Julia007"
             }
     )
     void matches(String expected, String userName) {

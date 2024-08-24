@@ -13,17 +13,17 @@ class NegativeSubArraysTest {
     @CsvSource(
             delimiter = '|',
             value = {"9 | 1,-2,4,-5,1",
-                     "6 | -1,-2,-3",
-                     "0 | 1,2,3",
-                     "1 | -100",
-                     "0 | 100"}
+                    "6 | -1,-2,-3",
+                    "0 | 1,2,3",
+                    "1 | -100",
+                    "0 | 100"}
     )
     void countNegativeSubArrays(int expected, String array) {
         assertEquals(expected, NegativeSubArrays.countNegativeSubArrays(toArray(array)));
     }
 
     private static Integer[] toArray(String array) {
-         return Stream.of(array.split(","))
+        return Stream.of(array.split(","))
                 .map(Integer::valueOf)
                 .toArray(Integer[]::new);
     }
