@@ -1,16 +1,14 @@
 package hackerrank.array;
 
 
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class JavaArrayList {
 
-    public static String getXYPoint(InputStream in) {
-        StringBuilder out = new StringBuilder();
-        Scanner scan = new Scanner(in);
+    public static void run() {
+        Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
 
         List<List<Integer>> list = new ArrayList<>();
@@ -33,18 +31,12 @@ public class JavaArrayList {
             int y = scan.nextInt();
 
             try{
-                out.append(list.get(x-1).get(y-1));
-//                System.out.println(list.get(x-1).get(y-1));
+                System.out.println(list.get(x-1).get(y-1));
             } catch(Exception e){
-                out.append("ERROR!");
-//                System.out.println("ERROR!");
+                System.out.println("ERROR!");
             }
-
-            out.append("\n");
         }
 
         scan.close();
-
-        return out.deleteCharAt(out.length() - 1).toString();
     }
 }

@@ -1,12 +1,14 @@
 package hackerrank.array;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 class JavaArrayListTest {
 
@@ -31,13 +33,14 @@ class JavaArrayListTest {
             ERROR!
             ERROR!""";
 
+
+    @BeforeAll
+    static void setup(){
+        System.setIn(new ByteArrayInputStream(IN.getBytes(StandardCharsets.UTF_8)));
+    }
     @Test
-    void getXYPoint() {
-        assertEquals(OUT, JavaArrayList.getXYPoint(getInput()));
+    void run() throws Exception {
+        String actual = tapSystemOut(JavaArrayList::run).trim();
+        assertEquals(OUT, actual);
     }
-
-    private InputStream getInput() {
-        return new ByteArrayInputStream(IN.getBytes(StandardCharsets.UTF_8));
-    }
-
 }
