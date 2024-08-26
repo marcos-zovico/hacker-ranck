@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class JavaArrayList {
 
-    public static void run() {
+    public static void runCode() {
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
 
