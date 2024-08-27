@@ -9,21 +9,23 @@ import java.nio.charset.StandardCharsets;
 import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class TagContentExtractorTest {
+class JavaRegexTest {
 
     private static final String IN = """
-            4
-            <h1>Nayeem loves counseling</h1>
-            <h1><h1>Sanjay has no watch</h1></h1><par>So wait for a while</par>
-            <Amee>safat codes like a ninja</amee>
-            <SA premium>Imtiaz has a secret crush</SA premium>""";
+            000.12.12.034
+            121.234.12.12
+            23.45.12.56
+            00.12.123.123123.123
+            122.23
+            Hello.IP""";
 
     private static final String OUT = """
-            Nayeem loves counseling
-            Sanjay has no watch
-            So wait for a while
-            None
-            Imtiaz has a secret crush""";
+            true
+            true
+            true
+            false
+            false
+            false""";
 
     @BeforeAll
     static void setup() {
@@ -32,7 +34,7 @@ class TagContentExtractorTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(TagContentExtractor::runCode);
+        String actual = tapSystemOut(JavaRegex::runCode);
         assertEquals(OUT, actual.strip());
     }
 }

@@ -1,8 +1,19 @@
 package hackerrank.strings;
 
-public class SubstringComparisons {
+import java.util.Scanner;
 
-    public static String getSmallestAndLargest(String s, int k) {
+public class JavaSubstringComparisons {
+
+    public static void runCode() {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.next();
+        int k = scan.nextInt();
+        scan.close();
+
+        System.out.println(getSmallestAndLargest(s, k));
+    }
+
+    private static String getSmallestAndLargest(String s, int k) {
 
         int length = s.length() - k + 1;
         String smallest = s.substring(0, k);
@@ -21,6 +32,6 @@ public class SubstringComparisons {
             }
         }
 
-        return smallest + " " + largest;
+        return  smallest + "\n" + largest;
     }
 }

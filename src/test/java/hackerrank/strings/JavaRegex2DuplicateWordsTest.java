@@ -9,21 +9,22 @@ import java.nio.charset.StandardCharsets;
 import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class TagContentExtractorTest {
+class JavaRegex2DuplicateWordsTest {
 
     private static final String IN = """
-            4
-            <h1>Nayeem loves counseling</h1>
-            <h1><h1>Sanjay has no watch</h1></h1><par>So wait for a while</par>
-            <Amee>safat codes like a ninja</amee>
-            <SA premium>Imtiaz has a secret crush</SA premium>""";
+            5
+            Goodbye bye bye world world world
+            Sam went went to to to his business
+            Reya is is the the best player in eye eye game
+            in inthe
+            Hello hello Ab aB""";
 
     private static final String OUT = """
-            Nayeem loves counseling
-            Sanjay has no watch
-            So wait for a while
-            None
-            Imtiaz has a secret crush""";
+            Goodbye bye world
+            Sam went to his business
+            Reya is the best player in eye game
+            in inthe
+            Hello Ab""";
 
     @BeforeAll
     static void setup() {
@@ -32,7 +33,7 @@ class TagContentExtractorTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(TagContentExtractor::runCode);
+        String actual = tapSystemOut(JavaRegex2DuplicateWords::runCode);
         assertEquals(OUT, actual.strip());
     }
 }

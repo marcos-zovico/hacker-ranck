@@ -1,5 +1,6 @@
 package hackerrank.strings;
 
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -8,21 +9,28 @@ public class TagContentExtractor {
     private static final String REGEX = "<(.+)>([^<>]+)</\\1>";
     private static final Pattern pattern = Pattern.compile(REGEX);
 
-    public static String extract(String input) {
+    public static void runCode() {
 
-        final Matcher matcher = pattern.matcher(input);
+        Scanner in = new Scanner(System.in);
+        int testCases = Integer.parseInt(in.nextLine());
 
-        StringBuilder content = new StringBuilder();
+        while (testCases > 0) {
 
-        if (!matcher.find()) {
-            content.append("None");
-        } else {
-            content.append(matcher.group(2));
-            while (matcher.find()) {
-                content.append(" - ").append(matcher.group(2));
+            String line = in.nextLine();
+            Matcher matcher = pattern.matcher(line);
+
+            if (!matcher.find()) {
+                System.out.println("None");
+            } else {
+                System.out.println(matcher.group(2));
+                while (matcher.find()) {
+                    System.out.println(matcher.group(2));
+                }
             }
+
+            testCases--;
         }
 
-        return content.toString();
+        in.close();
     }
 }
