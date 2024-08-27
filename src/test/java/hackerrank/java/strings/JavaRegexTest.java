@@ -1,5 +1,6 @@
-package hackerrank.strings;
+package hackerrank.java.strings;
 
+import hackerrank.java.strings.JavaRegex;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -9,15 +10,23 @@ import java.nio.charset.StandardCharsets;
 import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class JavaSubstringComparisonsTest {
+class JavaRegexTest {
 
     private static final String IN = """
-            welcometojava
-            3""";
+            000.12.12.034
+            121.234.12.12
+            23.45.12.56
+            00.12.123.123123.123
+            122.23
+            Hello.IP""";
 
     private static final String OUT = """
-            ava
-            wel""";
+            true
+            true
+            true
+            false
+            false
+            false""";
 
     @BeforeAll
     static void setup() {
@@ -26,7 +35,7 @@ class JavaSubstringComparisonsTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(JavaSubstringComparisons::runCode);
+        String actual = tapSystemOut(JavaRegex::runCode);
         assertEquals(OUT, actual.strip());
     }
 }

@@ -1,4 +1,4 @@
-package hackerrank.strings;
+package hackerrank.java.strings;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

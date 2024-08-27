@@ -1,5 +1,6 @@
-package hackerrank.strings;
+package hackerrank.java.strings;
 
+import hackerrank.java.strings.JavaSubstringComparisons;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -9,28 +10,15 @@ import java.nio.charset.StandardCharsets;
 import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class ValidUsernameRegularExpressionTest {
+class JavaSubstringComparisonsTest {
 
     private static final String IN = """
-            8
-            Julia
-            Samantha
-            Samantha_21
-            1Samantha
-            Samantha?10_2A
-            JuliaZ007
-            Julia@007
-            _Julia007""";
+            welcometojava
+            3""";
 
     private static final String OUT = """
-            Invalid
-            Valid
-            Valid
-            Invalid
-            Invalid
-            Valid
-            Invalid
-            Invalid""";
+            ava
+            wel""";
 
     @BeforeAll
     static void setup() {
@@ -39,7 +27,7 @@ class ValidUsernameRegularExpressionTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(ValidUsernameRegularExpression::runCode);
+        String actual = tapSystemOut(JavaSubstringComparisons::runCode);
         assertEquals(OUT, actual.strip());
     }
 }
