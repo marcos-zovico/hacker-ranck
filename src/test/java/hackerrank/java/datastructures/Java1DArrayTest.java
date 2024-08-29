@@ -34,7 +34,7 @@ class Java1DArrayTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(Java1DArray::runCode);
+        String actual = tapSystemOut(() -> Java1DArray.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 }

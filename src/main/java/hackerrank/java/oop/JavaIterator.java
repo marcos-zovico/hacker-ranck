@@ -20,7 +20,7 @@ public class JavaIterator {
 
     }
 
-    public static void runCode() {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         List<Object> mylist = new ArrayList<>();
 
