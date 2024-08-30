@@ -1,6 +1,5 @@
 package hackerrank.java.strings;
 
-import hackerrank.java.strings.TagContentExtractor;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
