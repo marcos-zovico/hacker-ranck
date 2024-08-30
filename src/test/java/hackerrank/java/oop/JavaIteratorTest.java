@@ -29,7 +29,7 @@ class JavaIteratorTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(() -> JavaIterator.main(new String[]{}));
+        String actual = tapSystemOut(() -> JavaIterator.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 }

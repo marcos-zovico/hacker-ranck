@@ -25,7 +25,7 @@ class JavaInterfaceTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(JavaInterface::runCode);
+        String actual = tapSystemOut(() -> JavaInterface.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 }

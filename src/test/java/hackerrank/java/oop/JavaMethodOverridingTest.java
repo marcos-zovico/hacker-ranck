@@ -17,7 +17,7 @@ class JavaMethodOverridingTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(JavaMethodOverriding::runCode);
+        String actual = tapSystemOut(() -> JavaMethodOverriding.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 }

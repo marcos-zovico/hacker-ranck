@@ -29,7 +29,7 @@ class JavaInstanceofKeywordTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(JavaInstanceofKeyword::runCode);
+        String actual = tapSystemOut(() -> JavaInstanceofKeyword.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 }

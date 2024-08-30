@@ -7,41 +7,43 @@ import java.util.Scanner;
 
 public class JavaIterator {
 
-    static Iterator<Object> func(List<Object> myList) {
+    public class Solution {
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            List<Object> mylist = new ArrayList<>();
 
-        Iterator<Object> it = myList.iterator();
+            int n = sc.nextInt();
+            int m = sc.nextInt();
 
-        while (it.hasNext()) {
-            Object element = it.next();
-            if ("###".equals(element))
-                break;
-        }
-        return it;
+            for (int i = 0; i < n; i++) {
+                mylist.add(sc.nextInt());
+            }
 
-    }
+            mylist.add("###");
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        List<Object> mylist = new ArrayList<>();
+            for (int i = 0; i < m; i++) {
+                mylist.add(sc.next());
+            }
 
-        int n = sc.nextInt();
-        int m = sc.nextInt();
+            Iterator<Object> it = func(mylist);
 
-        for (int i = 0; i < n; i++) {
-            mylist.add(sc.nextInt());
-        }
-
-        mylist.add("###");
-
-        for (int i = 0; i < m; i++) {
-            mylist.add(sc.next());
+            while (it.hasNext()) {
+                Object element = it.next();
+                System.out.println(element);
+            }
         }
 
-        Iterator<Object> it = func(mylist);
+        static Iterator<Object> func(List<Object> myList) {
 
-        while (it.hasNext()) {
-            Object element = it.next();
-            System.out.println(element);
+            Iterator<Object> it = myList.iterator();
+
+            while (it.hasNext()) {
+                Object element = it.next();
+                if ("###".equals(element))
+                    break;
+            }
+            return it;
+
         }
     }
 }

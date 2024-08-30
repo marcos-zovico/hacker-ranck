@@ -2,10 +2,11 @@ package hackerrank.java.oop;
 
 public class JavaMethodOverriding2 {
 
-    public static void runCode() {
-        MotorCycle M = new MotorCycle();
+    public class Solution {
+        public static void main(String[] args) {
+            MotorCycle M = new MotorCycle();
+        }
     }
-
 }
 
 class BiCycle {
