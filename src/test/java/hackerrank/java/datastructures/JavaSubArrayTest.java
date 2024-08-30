@@ -7,22 +7,15 @@ import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
 
 import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
-class JavaBitSetTest {
+class JavaSubArrayTest {
 
     private static final String IN = """
-            5 4
-            AND 1 2
-            SET 1 4
-            FLIP 2 2
-            OR 2 1""";
+            5
+            1 -2 4 -5 1""";
 
-    private static final String OUT = """
-            0 0
-            1 0
-            1 1
-            1 2""";
+    private static final String OUT = "9";
 
     @BeforeAll
     static void setup() {
@@ -31,8 +24,7 @@ class JavaBitSetTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(() -> JavaBitSet.Solution.main(new String[]{}));
+        String actual = tapSystemOut(() -> JavaSubArray.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
-
 }

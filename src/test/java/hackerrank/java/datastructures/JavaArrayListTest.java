@@ -1,4 +1,4 @@
-package hackerrank.array;
+package hackerrank.java.datastructures;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -9,33 +9,38 @@ import java.nio.charset.StandardCharsets;
 import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class Java1DArrayPart2Test {
+
+class JavaArrayListTest {
 
     private static final String IN = """
-            4
-            5 3
-            0 0 0 0 0
-            6 5
-            0 0 0 1 1 1
-            6 3
-            0 0 1 1 1 0
+            5
+            5 41 77 74 22 44
+            1 12
+            4 37 34 36 52
+            0
+            3 20 22 33
+            5
+            1 3
+            3 4
             3 1
-            0 1 0""";
+            4 3
+            5 5""";
 
     private static final String OUT = """
-            YES
-            YES
-            NO
-            NO""";
+            74
+            52
+            37
+            ERROR!
+            ERROR!""";
+
 
     @BeforeAll
-    static void setUp() {
+    static void setup(){
         System.setIn(new ByteArrayInputStream(IN.getBytes(StandardCharsets.UTF_8)));
     }
-
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(Java1DArrayPart2::runCode);
+        String actual = tapSystemOut(() -> JavaArrayList.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 }

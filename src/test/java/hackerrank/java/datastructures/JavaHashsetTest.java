@@ -34,7 +34,7 @@ class JavaHashsetTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(JavaHashset::runCode);
+        String actual = tapSystemOut(() -> JavaHashset.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 }

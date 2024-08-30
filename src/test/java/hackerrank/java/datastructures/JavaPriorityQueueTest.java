@@ -39,7 +39,7 @@ class JavaPriorityQueueTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(JavaPriorityQueue::runCode);
+        String actual = tapSystemOut(() -> JavaPriorityQueue.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 

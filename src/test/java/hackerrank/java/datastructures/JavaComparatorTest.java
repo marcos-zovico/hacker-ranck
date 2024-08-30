@@ -34,7 +34,7 @@ class JavaComparatorTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(JavaComparator::runCode);
+        String actual = tapSystemOut(() -> JavaComparator.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 }

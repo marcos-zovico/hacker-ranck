@@ -10,26 +10,29 @@ import java.util.stream.Collectors;
 
 public class JavaPriorityQueue {
 
-    private final static Scanner scan = new Scanner(System.in);
-    private final static Priorities priorities = new Priorities();
+    public class Solution {
 
-    public static void runCode() {
+        private final static Scanner scan = new Scanner(System.in);
+        private final static Priorities priorities = new Priorities();
 
-        int totalEvents = Integer.parseInt(scan.nextLine());
-        List<String> events = new ArrayList<>();
+        public static void main(String[] args) {
 
-        while (totalEvents-- != 0) {
-            String event = scan.nextLine();
-            events.add(event);
-        }
+            int totalEvents = Integer.parseInt(scan.nextLine());
+            List<String> events = new ArrayList<>();
 
-        List<Student> students = priorities.getStudents(events);
+            while (totalEvents-- != 0) {
+                String event = scan.nextLine();
+                events.add(event);
+            }
 
-        if (students.isEmpty()) {
-            System.out.println("EMPTY");
-        } else {
-            for (Student st : students) {
-                System.out.println(st.getName());
+            List<Student> students = priorities.getStudents(events);
+
+            if (students.isEmpty()) {
+                System.out.println("EMPTY");
+            } else {
+                for (Student st : students) {
+                    System.out.println(st.getName());
+                }
             }
         }
     }

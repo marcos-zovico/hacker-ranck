@@ -36,7 +36,7 @@ class JavaMapTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(JavaMap::runCode);
+        String actual = tapSystemOut(() -> JavaMap.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 

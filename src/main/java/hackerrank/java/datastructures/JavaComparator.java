@@ -6,22 +6,24 @@ import java.util.Scanner;
 
 public class JavaComparator {
 
-    public static void runCode() {
-        Scanner scan = new Scanner(System.in);
-        int n = scan.nextInt();
+    public class Solution {
+        public static void main(String[] args) {
+            Scanner scan = new Scanner(System.in);
+            int n = scan.nextInt();
 
-        Player[] player = new Player[n];
-        Checker checker = new Checker();
+            Player[] player = new Player[n];
+            Checker checker = new Checker();
 
-        for (int i = 0; i < n; i++) {
-            player[i] = new Player(scan.next(), scan.nextInt());
-        }
-        scan.close();
+            for (int i = 0; i < n; i++) {
+                player[i] = new Player(scan.next(), scan.nextInt());
+            }
+            scan.close();
 
-        Arrays.sort(player, checker);
+            Arrays.sort(player, checker);
 
-        for (Player value : player) {
-            System.out.printf("%s %s\n", value.name, value.score);
+            for (Player value : player) {
+                System.out.printf("%s %s\n", value.name, value.score);
+            }
         }
     }
 }

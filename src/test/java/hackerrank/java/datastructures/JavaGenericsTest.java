@@ -16,7 +16,7 @@ class JavaGenericsTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(JavaGenerics::runCode);
+        String actual = tapSystemOut(() -> JavaGenerics.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 

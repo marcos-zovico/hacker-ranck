@@ -28,7 +28,7 @@ class Java2DArrayTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(Java2DArray::runCode);
+        String actual = tapSystemOut(() -> Java2DArray.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 }

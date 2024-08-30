@@ -9,36 +9,38 @@ import java.util.Set;
 
 public class JavaDequeue {
 
-    public static void runCode() {
-        Scanner in = new Scanner(System.in);
+    public class Solution {
+        public static void main(String[] args) {
+            Scanner in = new Scanner(System.in);
 
-        Deque<Integer> deque = new ArrayDeque<>();
-        Set<Integer> set = new HashSet<>(deque);
+            Deque<Integer> deque = new ArrayDeque<>();
+            Set<Integer> set = new HashSet<>(deque);
 
-        int n = in.nextInt();
-        int m = in.nextInt();
-        int max = 0;
+            int n = in.nextInt();
+            int m = in.nextInt();
+            int max = 0;
 
-        for (int i = 0; i < n; i++) {
-            Integer num = in.nextInt();
-            deque.add(num);
-            set.add(num);
+            for (int i = 0; i < n; i++) {
+                Integer num = in.nextInt();
+                deque.add(num);
+                set.add(num);
 
-            if (deque.size() == m) {
-                if (set.size() > max) {
-                    max = set.size();
-                }
+                if (deque.size() == m) {
+                    if (set.size() > max) {
+                        max = set.size();
+                    }
 
-                int first = deque.remove();
+                    int first = deque.remove();
 
-                if (!deque.contains(first)) {
-                    set.remove(first);
+                    if (!deque.contains(first)) {
+                        set.remove(first);
+                    }
                 }
             }
+
+            System.out.println(max);
+
+            in.close();
         }
-
-        System.out.println(max);
-
-        in.close();
     }
 }

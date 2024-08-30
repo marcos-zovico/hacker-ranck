@@ -35,7 +35,7 @@ class JavaStackTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(JavaStack::runCode);
+        String actual = tapSystemOut(() -> JavaStack.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 

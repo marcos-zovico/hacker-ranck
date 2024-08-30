@@ -24,7 +24,7 @@ class JavaDequeueTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(JavaDequeue::runCode);
+        String actual = tapSystemOut(() -> JavaDequeue.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 }

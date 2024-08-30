@@ -31,7 +31,7 @@ class JavaListTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(JavaList::runCode);
+        String actual = tapSystemOut(() -> JavaList.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 }
