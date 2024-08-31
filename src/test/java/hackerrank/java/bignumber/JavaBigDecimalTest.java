@@ -41,7 +41,7 @@ class JavaBigDecimalTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(JavaBigDecimal::runCode);
+        String actual = tapSystemOut(() -> JavaBigDecimal.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 }

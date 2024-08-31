@@ -4,15 +4,17 @@ import java.util.Scanner;
 
 public class JavaRegex {
 
-    public static void runCode() {
-        Scanner in = new Scanner(System.in);
+    public class Solution {
+        public static void main(String[] args) {
+            Scanner in = new Scanner(System.in);
 
-        while (in.hasNext()) {
-            String ip = in.next();
-            System.out.println(ip.matches(new MyRegex().pattern));
+            while (in.hasNext()) {
+                String ip = in.next();
+                System.out.println(ip.matches(new MyRegex().pattern));
+            }
+
+            in.close();
         }
-
-        in.close();
     }
 
     private static class MyRegex {

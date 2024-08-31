@@ -9,28 +9,30 @@ public class TagContentExtractor {
     private static final String REGEX = "<(.+)>([^<>]+)</\\1>";
     private static final Pattern pattern = Pattern.compile(REGEX);
 
-    public static void runCode() {
+    public class Solution {
+        public static void main(String[] args) {
 
-        Scanner in = new Scanner(System.in);
-        int testCases = Integer.parseInt(in.nextLine());
+            Scanner in = new Scanner(System.in);
+            int testCases = Integer.parseInt(in.nextLine());
 
-        while (testCases > 0) {
+            while (testCases > 0) {
 
-            String line = in.nextLine();
-            Matcher matcher = pattern.matcher(line);
+                String line = in.nextLine();
+                Matcher matcher = pattern.matcher(line);
 
-            if (!matcher.find()) {
-                System.out.println("None");
-            } else {
-                System.out.println(matcher.group(2));
-                while (matcher.find()) {
+                if (!matcher.find()) {
+                    System.out.println("None");
+                } else {
                     System.out.println(matcher.group(2));
+                    while (matcher.find()) {
+                        System.out.println(matcher.group(2));
+                    }
                 }
+
+                testCases--;
             }
 
-            testCases--;
+            in.close();
         }
-
-        in.close();
     }
 }

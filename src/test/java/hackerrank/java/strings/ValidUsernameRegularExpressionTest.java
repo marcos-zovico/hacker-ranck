@@ -1,6 +1,5 @@
 package hackerrank.java.strings;
 
-import hackerrank.java.strings.ValidUsernameRegularExpression;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -40,7 +39,7 @@ class ValidUsernameRegularExpressionTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(ValidUsernameRegularExpression::runCode);
+        String actual = tapSystemOut(() -> ValidUsernameRegularExpression.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 }

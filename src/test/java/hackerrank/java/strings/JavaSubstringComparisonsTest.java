@@ -1,6 +1,5 @@
 package hackerrank.java.strings;
 
-import hackerrank.java.strings.JavaSubstringComparisons;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -27,7 +26,7 @@ class JavaSubstringComparisonsTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(JavaSubstringComparisons::runCode);
+        String actual = tapSystemOut(() -> JavaSubstringComparisons.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 }

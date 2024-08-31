@@ -35,7 +35,7 @@ class JavaRegexTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(JavaRegex::runCode);
+        String actual = tapSystemOut(() -> JavaRegex.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 }

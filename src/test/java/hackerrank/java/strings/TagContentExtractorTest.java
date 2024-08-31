@@ -32,7 +32,7 @@ class TagContentExtractorTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(TagContentExtractor::runCode);
+        String actual = tapSystemOut(() -> TagContentExtractor.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 }

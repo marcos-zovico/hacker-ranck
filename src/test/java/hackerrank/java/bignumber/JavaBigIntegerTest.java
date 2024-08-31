@@ -26,7 +26,7 @@ class JavaBigIntegerTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(JavaBigInteger::runCode);
+        String actual = tapSystemOut(() -> JavaBigInteger.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 

@@ -33,7 +33,7 @@ class JavaRegex2DuplicateWordsTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(JavaRegex2DuplicateWords::runCode);
+        String actual = tapSystemOut(() -> JavaRegex2DuplicateWords.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 }

@@ -22,7 +22,7 @@ class JavaPrimalityTestTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(JavaPrimalityTest::runCode);
+        String actual = tapSystemOut(() -> JavaPrimalityTest.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 }
