@@ -1,4 +1,4 @@
-package hackerrank.algorithms.sort;
+package hackerrank.algorithms.sorting;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -10,6 +10,7 @@ import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BigSortTest {
+
     private static final String IN = """
             100
             6046724675206781253805417697364063874537349942332939012160502967377173420319837265456476

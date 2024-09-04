@@ -1,4 +1,4 @@
-package hackerrank.algorithms.sort;
+package hackerrank.algorithms.sorting;
 
 import java.io.BufferedReader;
 import java.io.IOException;
