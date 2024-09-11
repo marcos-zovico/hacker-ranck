@@ -9,20 +9,18 @@ import java.nio.charset.StandardCharsets;
 import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class GradingStudentsTest {
+class AppleAndOrangeTest {
 
     private static final String IN = """
-            4
-            73
-            67
-            38
-            33""";
+            7 11
+            5 15
+            3 2
+            -2 2 1
+            5 -6""";
 
     private static final String OUT = """
-            75
-            67
-            40
-            33""";
+            1
+            1""";
 
     @BeforeAll
     static void setup() {
@@ -31,7 +29,7 @@ class GradingStudentsTest {
 
     @Test
     void runCode() throws Exception {
-        String actual = tapSystemOut(() -> GradingStudents.Solution.main(new String[]{}));
+        String actual = tapSystemOut(() -> AppleAndOrange.Solution.main(new String[]{}));
         assertEquals(OUT, actual.strip());
     }
 }
