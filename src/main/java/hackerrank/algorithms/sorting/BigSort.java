@@ -30,18 +30,6 @@ public class BigSort {
                         return s1.length() - s2.length();
                     }).collect(toList());
         }
-
-//        public static List<String> bigSorting(List<String> unsorted) {
-//            unsorted.sort((s1, s2) -> {
-//                if (s1.length() == s2.length()) {
-//                    return new BigInteger(s1).compareTo(new BigInteger(s2));
-//                }
-//                return s1.length() - s2.length();
-//            });
-//            return unsorted;
-//        }
-
-
     }
 
     public class Solution {
